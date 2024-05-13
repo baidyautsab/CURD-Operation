@@ -144,8 +144,10 @@ namespace curdOperation
                 if (rowsAffected > 0)
                 {
                     // Data updated successfully
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Data updated successfully.');", true);
-                    //Response.Redirect(Request.Url.AbsoluteUri);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Data updated successfully.');", true);
+                    Response.Write("User updated with id " + IdBox.Text);
+                    
+                    Response.Redirect(Request.Url.AbsoluteUri);
 
                     IdBox.Text = "";
                     NameBox.Text = "";
@@ -194,7 +196,12 @@ namespace curdOperation
                 if (rowsAffected > 0)
                 {
                     // Data deleted successfully
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Data deleted successfully.');", true);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Data deleted successfully.');", true);
+                    Response.Write("User deleted with id " +  DeleteIdBox.Text);
+
+                    Response.Redirect(Request.Url.AbsoluteUri);
+
+                    DeleteIdBox.Text = "";
                 }
                 else
                 {
